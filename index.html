@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para Mi Yey ❤️ Feliz Aniversario mi amor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8e1e8;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        header {
+            padding: 20px 0;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: #d8336e;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #d8336e;
+            margin-bottom: 20px;
+        }
+        
+        .counter {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #d8336e;
+            margin: 30px 0;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 15px;
+            display: inline-block;
+        }
+        
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .photo-card {
+            width: 100%;
+            max-width: 300px;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .photo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .photo {
+            width: 100%;
+            height: 200px;
+            background-color: #f1f1f1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .photo-info {
+            padding: 15px;
+        }
+        
+        .photo-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #d8336e;
+        }
+        
+        .photo-description {
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        .phrases-container {
+            margin: 50px 0;
+        }
+        
+        .phrase-card {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+        
+        .phrase-text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #555;
+            font-style: italic;
+        }
+        
+        .phrase-author {
+            font-weight: bold;
+            text-align: right;
+            color: #d8336e;
+        }
+        
+        .heart {
+            position: absolute;
+            background-color: #d8336e;
+            transform: rotate(45deg);
+            animation: heartBeat 1.5s infinite;
+        }
+        
+        @keyframes heartBeat {
+            0% {
+                transform: rotate(45deg) scale(1);
+            }
+            14% {
+                transform: rotate(45deg) scale(1.1);
+            }
+            28% {
+                transform: rotate(45deg) scale(1);
+            }
+            42% {
+                transform: rotate(45deg) scale(1.1);
+            }
+            70% {
+                transform: rotate(45deg) scale(1);
+            }
+        }
+        
+        .heart:before,
+        .heart:after {
+            content: "";
+            position: absolute;
+            background-color: #d8336e;
+            border-radius: 50%;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .heart:before {
+            left: -50%;
+            top: 0;
+        }
+        
+        .heart:after {
+            top: -50%;
+            left: 0;
+        }
+        
+        #floating-hearts-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        footer {
+            margin-top: 50px;
+            padding: 20px;
+            text-align: center;
+            color: #d8336e;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #d8336e;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: #b52a5b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(216, 51, 110, 0.3);
+        }
+        
+        .message-box {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin: 40px auto;
+            max-width: 700px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 50px auto;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: #d8336e;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 20px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .timeline-date {
+            font-weight: bold;
+            color: #d8336e;
+            margin-bottom: 10px;
+        }
+        
+        #music-controls {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            margin: 20px;
+            position: relative;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #d8336e;
+        }
+        
+        .loader-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #f8e1e8;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(216, 51, 110, 0.3);
+            border-radius: 50%;
+            border-top-color: #d8336e;
+            animation: spin 1s linear infinite;
+            margin-bottom: 20px;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .name-highlight {
+            color: #d8336e;
+            font-weight: bold;
+        }
+        
+        /* Estilos responsive para móviles */
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .counter {
+                font-size: 0.9rem;
+                padding: 10px;
+                margin: 20px 0;
+            }
+            
+            .message-box {
+                padding: 20px;
+                margin: 30px auto;
+            }
+            
+            .phrase-text {
+                font-size: 1rem;
+            }
+            
+            .timeline:before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+                left: 0 !important;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+            
+            .modal-content {
+                padding: 20px;
+                width: 85%;
+            }
+            
+            #music-controls {
+                bottom: 10px;
+                right: 10px;
+            }
+        }
+        
+        /* Estilos específicos para iPhone 13 */
+        @media screen and (min-width: 390px) and (max-width: 430px) {
+            .container {
+                padding: 12px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+        
+        /* Estilos específicos para Pixel 6a */
+        @media screen and (min-width: 410px) and (max-width: 460px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .counter {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container" id="loader">
+        <div class="loader"></div>
+        <p>Preparando algo especial para mi <span class="name-highlight">Yey</span>...</p>
+    </div>
+
+    <div id="floating-hearts-container"></div>
+
+    <div class="container">
+        <header>
+            <h1>Para Mi Yey, Analí ❤️</h1>
+            <p class="subtitle">2 Años y 11 Meses de Amor</p>
+        </header>
+
+        <div class="counter">
+            <span id="years">0</span> años, 
+            <span id="months">0</span> meses, 
+            <span id="days">0</span> días,
+            <span id="hours">0</span> horas,
+            <span id="minutes">0</span> minutos y
+            <span id="seconds">0</span> segundos juntos
+        </div>
+
+        <div class="message-box">
+            <h2>Para el amor de mi vida, mi Yey</h2>
+            <p>Han sido 2 años y 11 meses llenos de amor, risas, aprendizajes y momentos inolvidables. Cada día a tu lado es una bendición y un regalo que atesoro. Este es un pequeño detalle a nuestro amor y a todo lo que hemos construido juntos.</p>
+            <p>Te amo mi amor, mi Yey, como nunca pensé que podría amar a alguien.</p>
+        </div>
+
+        <h2>Nuestras Frases Especiales</h2>
+        <div class="phrases-container" id="phrases-container">
+            <!-- Las frases se cargarán desde JavaScript -->
+        </div>
+
+        <h2>Momentos Inolvidables</h2>
+        <div class="photo-gallery" id="photo-gallery">
+            <!-- Las fotos se cargarán desde JavaScript -->
+        </div>
+
+        <h2>Nuestra Historia</h2>
+        <div class="timeline" id="timeline">
+            <!-- La línea de tiempo se cargará desde JavaScript -->
+        </div>
+
+        <button class="btn" id="love-letter-btn">Abrir Carta de Amor</button>
+
+        <footer>
+            <p>Con todo mi amor, para ti, mi Yey. Por muchos años más juntos.</p>
+            <p>❤️ 10 de marzo, 2025 ❤️</p>
+        </footer>
+    </div>
+
+    <div id="music-controls">
+        <button class="btn" id="toggle-music">
+            <span id="play-icon">▶️</span>
+            <span id="pause-icon" style="display:none">⏸️</span>
+            Música
+        </button>
+    </div>
+
+    <div class="modal" id="love-letter-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <h2>Mi Carta de Amor Para Ti, Yey</h2>
+            <div id="love-letter-content">
+                <p>Mi querida Analí, mi Yey,</p>
+                <p>Hoy celebramos 2 años y 11 meses juntos, y quiero que sepas que cada momento contigo ha sido un regalo. Desde el día que te conocí en aquella plazuela con un poco de lluvia, recuerdo que llevavas puesta un llin unas botas hasta la rodilla, y un pequeño abrigo color blanco, no se si llama abrigo 🥰.
+                </p>
+                <p>
+                Aun me queda de recuerdo siempre la la primera vez que fuimos de pasea al campestre en Otuzco, te veias tan bella y delicada, te mareaste y algunas palabras no podias hablarlas bien 😻.
+                </p>
+                <p>
+                La primera vez que viaje a Bambamarca, cuando que si, llego muy temprano y tenia mucho frio, luego fuimos a chala, un lugar muy bonito y mi regalo de mis cajas saltarinas no salian ☹️
+                </p>
+                <p>
+                Desde aquel momento supe que había encontrado a alguien especial, pero nunca imaginé lo mucho que cambiarías mi vida.
+                </p>
+                <p>Gracias mi amor por tu paciencia, por tu comprensión, por tu apoyo incondicional. Gracias por las risas, por los abrazos, por estar ahí en los momentos difíciles y por hacer que los momentos felices sean aún más especiales.</p>
+                <p>Me encanta cuando me miras con aquellos ojos hermosos y esas pestañas gigantes y bellas, cómo sonríes, cómo tu presencia me ilumina. Me encanta quién soy cuando estoy contigo.</p>
+                <p>Estos 2 años y 11 meses son solo el comienzo de nuestra historia. Tengo tantos sueños que quiero cumplir a tu lado, tantos lugares que quiero visitar contigo, tantas aventuras que quiero vivir juntos.</p>
+                <p>Te amo más de lo que las palabras pueden expresar, y ese amor sigue creciendo cada día.</p>
+                <p>Por siempre tuyo,</p>
+                <p>Tu Nil 🥰🥰🥰</p>
+            </div>
+        </div>
+    </div>
+
+    <audio id="background-music" loop>
+        <source src="audio/music.mp3" type="audio/mpeg">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+
+    <script>
+        // Datos - Reemplaza con tus propias frases y fotos
+        const phrases = [
+            { text: "Por mas molestos que estemos, nunca acostarnos a dormir enojados.", author: "Tú" },
+            { text: "Eres mi persona favorita en todo el mundo.", author: "Yo" },
+            { text: "Mi gordito precioso 😘.", author: "Tú" },
+            { text: "Tu sonrisa es el momento más brillante de mi día.", author: "Yo" },
+            { text: "Te quiero hasta el infinito y más allá, mi Yey.", author: "Tú" },
+            // Añade más frases que hayas usado entre ustedes
+        ];
+
+        const photos = [
+            { url: "img/img1.jpg", title: "Nuestro primer viaje", description: "Aquella escapada donde nos tomamos esta foto con la mejor compañía: tú, mi Yey." },
+            { url: "img/img5.jpg", title: "La cena especial", description: "Celebrando nuestro primer aniversario con una cena romántica." },
+            { url: "img/img6.jpg", title: "Año nuevo juntos", description: "Nuestro reciente año nuevo juntos." },
+            { url: "img/img4.jpg", title: "La primera vez que fuimos a la playa", description: "La primera vez vimos el atardecer, cuando el sol terminanaba de ocultarse." },
+            { url: "img/img2.jpg", title: "El picnic", description: "El día que preparamos un picnic cuando fuimos de viaje a Polloc, con tu comida favorita." },
+            { url: "img/img7.jpg", title: "Cumpleaños de mi Yey", description: "La celebración de tu cumpleaños este mes pasado, con tu pastel favorito." },
+            // Añade más fotos con sus descripciones
+        ];
+
+        const timelineEvents = [
+            { date: "24 de Marzo 2022", content: "Nuestro primer encuentro. Nunca olvidaré cómo conocí a mi Yey y sentí esa conexión especial desde el primer momento." },
+            { date: "10 de Abril 2022", content: "Cuando viaje a Bambamarca. Estaba tan nervioso, pero todo salió perfecto 🥰🥰🥰 me dijiste que SI" },
+            { date: "Agosto 2022", content: "Tu primer 'Te amo'. El momento más hermoso cuando me abrazaste y me dijiste Te amo." },
+            { date: "Diciembre 2022", content: "Nuestra primera Navidad Juntos. Cuando estabas trabajando aca en Cajamarca, y pudimos pasar Navidad por primera vez juntos." },
+            { date: "Abril 2023", content: "Celebramos nuestro primer año juntos. ¡Cómo pasa el tiempo cuando eres feliz!" },
+            { date: "Octubre 2023", content: "Superamos juntos nuestro primer gran desafío como pareja, saliendo más fuertes que nunca." },
+            { date: "Abril 2024", content: "Dos años juntos y seguimos descubriendo nuevas razones para amarnos cada día." },
+            { date: "Marzo 2025", content: "Hoy, celebrando 2 años y 11 meses con mi Yey, con la mirada puesta en un futuro juntos lleno de amor." },
+            // Añade más eventos importantes de su relación
+        ];
+
+        // Cargar elementos cuando el documento esté listo
+        document.addEventListener("DOMContentLoaded", function() {
+            // Mostrar el loader por 2 segundos
+            setTimeout(function() {
+                document.getElementById('loader').style.display = 'none';
+            }, 2000);
+
+            // Cargar frases
+            const phrasesContainer = document.getElementById('phrases-container');
+            phrases.forEach(phrase => {
+                const phraseCard = document.createElement('div');
+                phraseCard.className = 'phrase-card';
+                
+                phraseCard.innerHTML = `
+                    <p class="phrase-text">"${phrase.text}"</p>
+                    <p class="phrase-author">- ${phrase.author}</p>
+                `;
+                phrasesContainer.appendChild(phraseCard);
+            });
+
+            // Cargar fotos
+            const galleryContainer = document.getElementById('photo-gallery');
+            photos.forEach(photo => {
+                const photoCard = document.createElement('div');
+                photoCard.className = 'photo-card';
+                
+                photoCard.innerHTML = `
+                    <div class="photo">
+                        <img src="${photo.url}" alt="${photo.title}">
+                    </div>
+                    <div class="photo-info">
+                        <div class="photo-title">${photo.title}</div>
+                        <div class="photo-description">${photo.description}</div>
+                    </div>
+                `;
+                galleryContainer.appendChild(photoCard);
+            });
+
+            // Cargar línea de tiempo
+            const timelineContainer = document.getElementById('timeline');
+            timelineEvents.forEach((event, index) => {
+                const timelineItem = document.createElement('div');
+                timelineItem.className = 'timeline-item';
+                
+                timelineItem.innerHTML = `
+                    <div class="timeline-content">
+                        <div class="timeline-date">${event.date}</div>
+                        <p>${event.content}</p>
+                    </div>
+                `;
+                timelineContainer.appendChild(timelineItem);
+            });
+
+            // Actualizar contador
+            updateCounter();
+            setInterval(updateCounter, 1000);
+
+            // Crear corazones flotantes
+            createFloatingHearts();
+            setInterval(createFloatingHearts, 2000);
+
+            // Eventos para el modal de la carta de amor
+            const modal = document.getElementById('love-letter-modal');
+            const btn = document.getElementById('love-letter-btn');
+            const closeModal = document.getElementById('close-modal');
+
+            btn.onclick = function() {
+                modal.style.display = "flex";
+            };
+
+            closeModal.onclick = function() {
+                modal.style.display = "none";
+            };
+
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            };
+
+            // Control de música
+            const musicBtn = document.getElementById('toggle-music');
+            const music = document.getElementById('background-music');
+            const playIcon = document.getElementById('play-icon');
+            const pauseIcon = document.getElementById('pause-icon');
+
+            musicBtn.addEventListener('click', function() {
+                if (music.paused) {
+                    music.play();
+                    playIcon.style.display = 'none';
+                    pauseIcon.style.display = 'inline';
+                } else {
+                    music.pause();
+                    playIcon.style.display = 'inline';
+                    pauseIcon.style.display = 'none';
+                }
+            });
+        });
+
+        // Función para actualizar el contador
+        function updateCounter() {
+            // Fecha de inicio de la relación (YYYY-MM-DD)
+            const startDate = new Date('2022-04-10'); // Reemplaza con tu fecha real
+            const now = new Date();
+            
+            let years = now.getFullYear() - startDate.getFullYear();
+            let months = now.getMonth() - startDate.getMonth();
+            
+            if (months < 0) {
+                years--;
+                months += 12;
+            }
+            
+            const startOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+            let days = Math.floor((now - startOfDay) / (24 * 60 * 60 * 1000));
+            
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let seconds = now.getSeconds();
+            
+            document.getElementById('years').textContent = years;
+            document.getElementById('months').textContent = months;
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+        }
+
+        // Función para crear corazones flotantes
+        function createFloatingHearts() {
+            const container = document.getElementById('floating-hearts-container');
+            const heart = document.createElement('div');
+            heart.className = 'heart';
+            
+            const size = Math.random() * 20 + 10;
+            heart.style.width = `${size}px`;
+            heart.style.height = `${size}px`;
+            
+            const startPositionLeft = Math.random() * window.innerWidth;
+            heart.style.left = `${startPositionLeft}px`;
+            heart.style.top = `${window.innerHeight}px`;
+            
+            const endPositionLeft = startPositionLeft + (Math.random() * 100 - 50);
+            const duration = Math.random() * 10 + 5;
+            
+            heart.style.animation = `heartBeat 1.5s infinite, floatUp ${duration}s linear forwards`;
+            heart.style.opacity = Math.random() * 0.5 + 0.5;
+            
+            // Animación para flotar hacia arriba
+            const keyframes = `
+                @keyframes floatUp {
+                    0% {
+                        transform: rotate(45deg) translate(0, 0);
+                        opacity: ${heart.style.opacity};
+                    }
+                    100% {
+                        transform: rotate(45deg) translate(${endPositionLeft - startPositionLeft}px, -${window.innerHeight + 100}px);
+                        opacity: 0;
+                    }
+                }
+            `;
+            
+            const styleSheet = document.createElement('style');
+            styleSheet.type = 'text/css';
+            styleSheet.innerText = keyframes;
+            document.head.appendChild(styleSheet);
+            
+            container.appendChild(heart);
+            
+            // Eliminar el corazón después de la animación
+            setTimeout(() => {
+                heart.remove();
+                styleSheet.remove();
+            }, duration * 1000);
+        }
+    </script>
+</body>
+</html>
